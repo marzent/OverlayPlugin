@@ -21,12 +21,12 @@ jobs:
         id: determine_version
         shell: pwsh
         run: |
-          $text = [System.IO.File]::ReadAllText("OverlayPlugin\Properties\AssemblyInfo.cs");
-          $regex = [regex]::New('\[assembly: AssemblyVersion\("([0-9]+\.[0-9]+\.[0-9]+)\.[0-9]+"\)');
+          $text = [System.IO.File]::ReadAllText("OverlayPlugin\OverlayPlugin.csproj");
+          $regex = [regex]::New('<AssemblyVersion>([0-9]+\.[0-9]+\.[0-9]+)\.[0-9]+<\/AssemblyVersion>');
           $m = $regex.Match($text);
           if (-not $m) {
-              echo "Error: Version number not found in the AssemblyInfo.cs!"
-              exit 1
+            echo "Error: Version number not found in OverlayPlugin.csproj!"
+            exit 1
           }
           $version = $m.Groups[1]
           echo "::set-output name=version::$version"
