@@ -70,27 +70,30 @@ try {
 
     echo "==> Building archive..."
 
-    cd out\Release
+    cd out\Release\net48
 
-    if (Test-Path OverlayPlugin) { rm -Recurse OverlayPlugin }
-    mkdir OverlayPlugin\libs
+    if (Test-Path ..\OverlayPlugin) { rm -Recurse ..\OverlayPlugin }
+    mkdir ..\OverlayPlugin\libs
 
-    cp @("OverlayPlugin.dll", "OverlayPlugin.dll.config", "README.md", "LICENSE.txt") OverlayPlugin
-    cp -Recurse libs\resources OverlayPlugin
-    cp -Recurse libs\*.dll OverlayPlugin\libs
-    del OverlayPlugin\libs\CefSharp.*
+    cp @("OverlayPlugin.dll", "OverlayPlugin.dll.config", "README.md", "LICENSE.txt") ..\OverlayPlugin
+    cp -Recurse ..\libs\net48\resources ..\OverlayPlugin
+    cp -Recurse ..\libs\net48\*.dll ..\OverlayPlugin\libs
+    del ..\OverlayPlugin\libs\CefSharp.*
 
     # Translations
-    cp -Recurse @("de-DE", "fr-FR", "ja-JP", "ko-KR", "zh-CN") OverlayPlugin
-    cp -Recurse @("libs\de-DE", "libs\fr-FR", "libs\ja-JP", "libs\ko-KR", "libs\zh-CN") OverlayPlugin\libs
+    $langs = "de-DE", "fr-FR", "ja-JP", "ko-KR", "zh-CN"
+    foreach ($lang in $langs) {
+        mkdir ..\OverlayPlugin\$lang
+        cp $lang\OverlayPlugin.resources.dll ..\OverlayPlugin\$lang\OverlayPlugin.resources.dll
+        cp -Recurse ..\libs\net48\$lang ..\OverlayPlugin\libs
+    }
 
-
-    $text = [System.IO.File]::ReadAllText("$PWD\..\..\OverlayPlugin\Properties\AssemblyInfo.cs");
-    $regex = [regex]::New('\[assembly: AssemblyVersion\("([0-9]+\.[0-9]+\.[0-9]+)\.[0-9]+"\)');
+    $text = [System.IO.File]::ReadAllText("$PWD\..\..\..\OverlayPlugin\OverlayPlugin.csproj");
+    $regex = [regex]::New('<AssemblyVersion>([0-9]+\.[0-9]+\.[0-9]+)\.[0-9]+<\/AssemblyVersion>');
     $m = $regex.Match($text);
 
     if (-not $m) {
-        echo "Error: Version number not found in the AssemblyInfo.cs!"
+        echo "Error: Version number not found in OverlayPlugin.csproj!"
         exit 1
     }
 
@@ -98,7 +101,7 @@ try {
     $archive = "..\OverlayPlugin-$version.7z"
 
     if (Test-Path $archive) { rm $archive }
-    cd OverlayPlugin
+    cd ..\OverlayPlugin
     7z a ..\$archive .
     cd ..
 
