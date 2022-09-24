@@ -4,6 +4,7 @@
     <ProjectGuid>{E2BC6483-B966-4A4A-B4CC-D50A4BD73AF3}</ProjectGuid>
     <RootNamespace>RainbowMage.HtmlRenderer</RootNamespace>
     <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <AssemblyTitle>HtmlRenderer</AssemblyTitle>
     <Product>HtmlRenderer</Product>
     <Description>HTML based offscreen rendering library for the OverlayPlugin.</Description>

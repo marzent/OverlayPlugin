@@ -2,6 +2,7 @@
   <PropertyGroup>
     <ProjectGuid>{B9BBE478-8FD7-43D9-BD50-C806B1EC672F}</ProjectGuid>
     <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <AssemblyTitle>ExternalOverlayTest</AssemblyTitle>
     <Product>ExternalOverlayTest</Product>
     <Copyright>Copyright ©  2015</Copyright>

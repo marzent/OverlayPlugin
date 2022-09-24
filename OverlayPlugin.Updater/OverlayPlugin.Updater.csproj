@@ -3,6 +3,7 @@
     <ProjectGuid>{82B1D288-51A6-411F-A5F9-E37C6A72E7DA}</ProjectGuid>
     <RootNamespace>RainbowMage.OverlayPlugin.Updater</RootNamespace>
     <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <AssemblyTitle>OverlayPlugin.Updater</AssemblyTitle>
     <Product>OverlayPlugin.Updater</Product>

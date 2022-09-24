@@ -3,6 +3,7 @@
     <ProjectGuid>{5D15AD79-050C-4780-986E-0F1138EA1D40}</ProjectGuid>
     <RootNamespace>RainbowMage.OverlayPlugin</RootNamespace>
     <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <AssemblyTitle>OverlayPlugin</AssemblyTitle>
     <Product>OverlayPlugin</Product>
     <Description>Overlay plugin for Advanced Combat Tracker</Description>

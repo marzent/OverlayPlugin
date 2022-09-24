@@ -4,6 +4,7 @@
     <ProjectGuid>{DD6D2A9A-4AD4-47B8-A1D0-C8608EA37092}</ProjectGuid>
     <RootNamespace>RainbowMage.OverlayPlugin</RootNamespace>
     <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <AssemblyTitle>OverlayPlugin.Core</AssemblyTitle>
     <Product>OverlayPlugin</Product>
     <Description>Core assembly of the OverlayPlugin</Description>
