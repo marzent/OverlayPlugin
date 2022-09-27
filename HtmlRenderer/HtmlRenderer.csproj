@@ -4,30 +4,16 @@
     <ProjectGuid>{E2BC6483-B966-4A4A-B4CC-D50A4BD73AF3}</ProjectGuid>
     <RootNamespace>RainbowMage.HtmlRenderer</RootNamespace>
     <TargetFramework>net48</TargetFramework>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <AssemblyTitle>HtmlRenderer</AssemblyTitle>
     <Product>HtmlRenderer</Product>
     <Description>HTML based offscreen rendering library for the OverlayPlugin.</Description>
     <Copyright>Copyright © RainbowMage 2015, Kuriyama hibiya 2016, ngld 2019</Copyright>
-    <AssemblyVersion>0.19.6.0</AssemblyVersion>
-    <FileVersion>0.19.6.0</FileVersion>
-    <OutputPath>..\out\$(Configuration)\libs\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <PostBuildEvent />
-    <DebugType>pdbonly</DebugType>
-    <PostBuildEvent />
-    <PostBuildEvent />
+    <Version>0.19.6.0</Version>
+    <CefSharpTargetDir>CefSharp</CefSharpTargetDir>
+    <CefSharpBuildAction>None</CefSharpBuildAction>
   </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <ItemGroup>
+    <ItemGroup>
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
@@ -58,10 +44,20 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="cef.redist.x64" Version="95.7.14" />
-    <PackageReference Include="cef.redist.x86" Version="95.7.14" />
-    <PackageReference Include="CefSharp.Common" Version="95.7.141" />
-    <PackageReference Include="CefSharp.OffScreen" Version="95.7.141" />
+    <PackageReference Include="cef.redist.x64" Version="95.7.14">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="cef.redist.x86" Version="95.7.14" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="CefSharp.Common" Version="95.7.141">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="CefSharp.OffScreen" Version="95.7.141">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
