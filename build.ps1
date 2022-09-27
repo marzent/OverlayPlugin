@@ -8,9 +8,9 @@ try {
 
     $DEFAULT_VSWHERE_PATH = "${Env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
     if ( -not (Test-Path "$DEFAULT_VSWHERE_PATH")) {
-        echo "Unable to find vswhere.exe, defauling to $DEFAULT_VS_PATH value in build.ps1."
+        Write-Output "Unable to find vswhere.exe, defauling to $DEFAULT_VS_PATH value in build.ps1."
         if ( -not (Test-Path "$DEFAULT_VS_PATH")) {
-            echo "Error: DEFAULT_VS_PATH isn't set correctly! Update the variable in build.ps1 for your system."
+            Write-Output "Error: DEFAULT_VS_PATH isn't set correctly! Update the variable in build.ps1 for your system."
             exit 1
         }
         $VS_PATH = $DEFAULT_VS_PATH
@@ -19,13 +19,13 @@ try {
     }
 
     if ( -not (Test-Path "Thirdparty\ACT\Advanced Combat Tracker.exe" )) {
-        echo 'Error: Please run tools\fetch_deps.py'
+        Write-Output 'Error: Please run tools\fetch_deps.py'
         exit 1
     }
 
 
     if ( -not (Test-Path "Thirdparty\FFXIV_ACT_Plugin\SDK\FFXIV_ACT_Plugin.Common.dll" )) {
-        echo 'Error: Please run tools\fetch_deps.py'
+        Write-Output 'Error: Please run tools\fetch_deps.py'
         exit 1
     }
 
@@ -35,79 +35,63 @@ try {
     }
 
     if ( -not (Test-Path .\OverlayPlugin.Updater\Resources\libcurl.dll)) {
-        echo "==> Building cURL..."
+        Write-Output "==> Building cURL..."
 
         mkdir .\OverlayPlugin.Updater\Resources
-        cd Thirdparty\curl\winbuild
+        Set-Location Thirdparty\curl\winbuild
 
-        echo "@call `"$VS_PATH\VC\Auxiliary\Build\vcvarsall.bat`" amd64"           | Out-File -Encoding ascii tmp_build.bat
-        echo "nmake /f Makefile.vc mode=dll VC=16 GEN_PDB=no DEBUG=no MACHINE=x64" | Out-File -Encoding ascii -Append tmp_build.bat
-        echo "@call `"$VS_PATH\VC\Auxiliary\Build\vcvarsall.bat`" x86"             | Out-File -Encoding ascii -Append tmp_build.bat
-        echo "nmake /f Makefile.vc mode=dll VC=16 GEN_PDB=no DEBUG=no MACHINE=x86" | Out-File -Encoding ascii -Append tmp_build.bat
+        Write-Output "@call `"$VS_PATH\VC\Auxiliary\Build\vcvarsall.bat`" amd64"           | Out-File -Encoding ascii tmp_build.bat
+        Write-Output "nmake /f Makefile.vc mode=dll VC=16 GEN_PDB=no DEBUG=no MACHINE=x64" | Out-File -Encoding ascii -Append tmp_build.bat
+        Write-Output "@call `"$VS_PATH\VC\Auxiliary\Build\vcvarsall.bat`" x86"             | Out-File -Encoding ascii -Append tmp_build.bat
+        Write-Output "nmake /f Makefile.vc mode=dll VC=16 GEN_PDB=no DEBUG=no MACHINE=x86" | Out-File -Encoding ascii -Append tmp_build.bat
 
         cmd "/c" "tmp_build.bat"
-        sleep 3
-        del tmp_build.bat
+        Start-Sleep 3
+        Remove-Item tmp_build.bat
 
-        cd ..\builds
-        copy .\libcurl-vc16-x64-release-dll-ipv6-sspi-winssl\bin\libcurl.dll ..\..\..\OverlayPlugin.Updater\Resources\libcurl-x64.dll
-        copy .\libcurl-vc16-x86-release-dll-ipv6-sspi-winssl\bin\libcurl.dll ..\..\..\OverlayPlugin.Updater\Resources\libcurl.dll
+        Set-Location ..\builds
+        Copy-Item .\libcurl-vc16-x64-release-dll-ipv6-sspi-winssl\bin\libcurl.dll ..\..\..\OverlayPlugin.Updater\Resources\libcurl-x64.dll
+        Copy-Item .\libcurl-vc16-x86-release-dll-ipv6-sspi-winssl\bin\libcurl.dll ..\..\..\OverlayPlugin.Updater\Resources\libcurl.dll
 
-        cd ..\..\..
+        Set-Location ..\..\..
     }
 
     if ($ci) {
-        echo "==> Continuous integration flag set. Building Debug..."
-        msbuild -p:Configuration=Debug -p:Platform=x64 "OverlayPlugin.sln" -t:Restore
-        msbuild -p:Configuration=Debug -p:Platform=x64 "OverlayPlugin.sln"    
+        Write-Output "==> Continuous integration flag set. Building Debug..."
+        dotnet publish -c debug  
     }
 
-    echo "==> Building..."
+    Write-Output "==> Building..."
 
-    msbuild -p:Configuration=Release -p:Platform=x64 "OverlayPlugin.sln" -t:Restore
-    msbuild -p:Configuration=Release -p:Platform=x64 "OverlayPlugin.sln"
+    dotnet publish -c release
+    
     if (-not $?) { exit 1 }
 
-    echo "==> Building archive..."
+    Write-Output "==> Building archive..."
 
-    cd out\Release\net48
+    Set-Location out\Release\net48
 
-    if (Test-Path ..\OverlayPlugin) { rm -Recurse ..\OverlayPlugin }
-    mkdir ..\OverlayPlugin\libs
+    if (Test-Path ..\OverlayPlugin) { Remove-Item ..\OverlayPlugin -Recurse}
+    New-Item -Path ".." -Name "OverlayPlugin" -ItemType "directory"
 
-    cp @("OverlayPlugin.dll", "OverlayPlugin.dll.config", "README.md", "LICENSE.txt") ..\OverlayPlugin
-    cp -Recurse ..\libs\net48\resources ..\OverlayPlugin
-    cp -Recurse ..\libs\net48\*.dll ..\OverlayPlugin\libs
-    del ..\OverlayPlugin\libs\CefSharp.*
+    Copy-Item -Path "publish\*" -Destination "..\OverlayPlugin\" -Recurse
 
-    # Translations
-    $langs = "de-DE", "fr-FR", "ja-JP", "ko-KR", "zh-CN"
-    foreach ($lang in $langs) {
-        mkdir ..\OverlayPlugin\$lang
-        cp $lang\OverlayPlugin.resources.dll ..\OverlayPlugin\$lang\OverlayPlugin.resources.dll
-        cp -Recurse ..\libs\net48\$lang ..\OverlayPlugin\libs
-    }
-
-    $text = [System.IO.File]::ReadAllText("$PWD\..\..\..\OverlayPlugin\OverlayPlugin.csproj");
-    $regex = [regex]::New('<AssemblyVersion>([0-9]+\.[0-9]+\.[0-9]+)\.[0-9]+<\/AssemblyVersion>');
-    $m = $regex.Match($text);
-
-    if (-not $m) {
-        echo "Error: Version number not found in OverlayPlugin.csproj!"
-        exit 1
-    }
-
-    $version = $m.Groups[1]
+    Set-Location ..\OverlayPlugin
+    Remove-Item CefSharp -Recurse
+    Remove-Item *.pdb
+    Remove-Item *.dll.config
+    
+    [xml]$csprojcontents = Get-Content -Path "$PWD\..\..\..\OverlayPlugin\OverlayPlugin.csproj";
+    $version = $csprojcontents.Project.PropertyGroup.Version;
     $archive = "..\OverlayPlugin-$version.7z"
 
-    if (Test-Path $archive) { rm $archive }
-    cd ..\OverlayPlugin
+    if (Test-Path $archive) { Remove-Item $archive }
     7z a ..\$archive .
-    cd ..
+    Set-Location ..
 
     $archive = "..\OverlayPlugin-$version.zip"
 
-    if (Test-Path $archive) { rm $archive }
+    if (Test-Path $archive) { Remove-Item $archive }
     7z a $archive OverlayPlugin
 } catch {
     Write-Error $Error[0]
