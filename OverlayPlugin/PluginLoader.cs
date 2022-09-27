@@ -34,10 +34,10 @@ namespace RainbowMage.OverlayPlugin
             {
                 asmResolver = new AssemblyResolver(new List<string>
                 {
-                    Path.Combine(pluginDirectory, "libs"),
+                    pluginDirectory,
                     Path.Combine(pluginDirectory, "addons"),
 #if DEBUG
-                    Path.Combine(pluginDirectory, "libs", Environment.Is64BitProcess ? "x64" : "x86"),
+                    Path.Combine(pluginDirectory, Environment.Is64BitProcess ? "x64" : "x86"),
 #else
                     GetCefPath()
 #endif
