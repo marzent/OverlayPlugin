@@ -23,6 +23,7 @@ jobs:
         run: |
           [xml]$csprojcontents = Get-Content -Path "OverlayPlugin\OverlayPlugin.csproj";
           $version = $csprojcontents.Project.PropertyGroup.Version;
+          $version = ($version | Out-String).Trim()
           echo "::set-output name=version::$version"
 
       - name: Check Tag Exists

@@ -63,7 +63,7 @@ try {
 
     Write-Output "==> Building..."
 
-    if (Test-Path out\Release\OverlayPlugin) { Remove-Item out\Release\OverlayPlugin}
+    if (Test-Path out\Release\OverlayPlugin) { Remove-Item out\Release\OverlayPlugin -Recurse }
     dotnet publish -c release
     
     if (-not $?) { exit 1 }
@@ -76,6 +76,7 @@ try {
     
     [xml]$csprojcontents = Get-Content -Path "$PWD\..\..\..\OverlayPlugin\OverlayPlugin.csproj";
     $version = $csprojcontents.Project.PropertyGroup.Version;
+    $version = ($version | Out-String).Trim()
     $archive = "..\OverlayPlugin-$version.7z"
 
     if (Test-Path $archive) { Remove-Item $archive }

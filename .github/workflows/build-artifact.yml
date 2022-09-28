@@ -67,6 +67,7 @@ jobs:
         run: |
           [xml]$csprojcontents = Get-Content -Path "OverlayPlugin\OverlayPlugin.csproj";
           $version = $csprojcontents.Project.PropertyGroup.Version;
+          $version = ($version | Out-String).Trim()
           echo "version=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
 
       # Expected "OverlayPlugin" as top level item of .zip
