@@ -209,150 +209,192 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ControlPanel.de-DE.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ControlPanel.fr-FR.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ControlPanel.ja-JP.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ControlPanel.ko-KR.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ControlPanel.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ControlPanel.zh-CN.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\GeneralConfigTab.de-DE.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\GeneralConfigTab.fr-FR.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\GeneralConfigTab.ja-JP.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\GeneralConfigTab.ko-KR.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\GeneralConfigTab.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\GeneralConfigTab.zh-CN.resx">
       <DependentUpon>GeneralConfigTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\LogPanel.resx">
       <DependentUpon>LogPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\NewOverlayDialog.de-DE.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\NewOverlayDialog.fr-FR.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\NewOverlayDialog.ja-JP.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\NewOverlayDialog.ko-KR.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\NewOverlayDialog.zh-CN.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\RenameOverlayDialog.de-DE.resx">
       <DependentUpon>RenameOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\RenameOverlayDialog.fr-FR.resx">
       <DependentUpon>RenameOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\RenameOverlayDialog.resx">
       <DependentUpon>RenameOverlayDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\RenameOverlayDialog.zh-CN.resx">
       <DependentUpon>RenameOverlayDialog.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\WSConfigPanel.de-DE.resx">
       <DependentUpon>WSConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\WSConfigPanel.fr-FR.resx">
       <DependentUpon>WSConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\WSConfigPanel.ja-JP.resx">
       <DependentUpon>WSConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\WSConfigPanel.ko-KR.resx">
       <DependentUpon>WSConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\WSConfigPanel.zh-CN.resx">
       <DependentUpon>WSConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="EventSources\BuiltinEventConfigPanel.de-DE.resx">
       <DependentUpon>BuiltinEventConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="EventSources\BuiltinEventConfigPanel.fr-FR.resx">
       <DependentUpon>BuiltinEventConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="EventSources\BuiltinEventConfigPanel.zh-CN.resx">
       <DependentUpon>BuiltinEventConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LabelOverlayConfigPanel.de-DE.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LabelOverlayConfigPanel.fr-FR.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LabelOverlayConfigPanel.ja-JP.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LabelOverlayConfigPanel.ko-KR.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LabelOverlayConfigPanel.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LabelOverlayConfigPanel.zh-CN.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LogParseConfigPanel.de-DE.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LogParseConfigPanel.fr-FR.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LogParseConfigPanel.ja-JP.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LogParseConfigPanel.ko-KR.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LogParseConfigPanel.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="EventSources\BuiltinEventConfigPanel.ja-JP.resx">
       <DependentUpon>BuiltinEventConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="EventSources\BuiltinEventConfigPanel.ko-KR.resx">
       <DependentUpon>BuiltinEventConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="EventSources\BuiltinEventConfigPanel.resx">
       <DependentUpon>BuiltinEventConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\LogParseConfigPanel.zh-CN.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\MiniParseConfigPanel.de-DE.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\MiniParseConfigPanel.fr-FR.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\MiniParseConfigPanel.ja-JP.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\MiniParseConfigPanel.ko-KR.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\MiniParseConfigPanel.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
@@ -362,18 +404,23 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\MiniParseConfigPanel.zh-CN.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\SpellTimerConfigPanel.de-DE.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\SpellTimerConfigPanel.fr-FR.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\SpellTimerConfigPanel.ko-KR.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\SpellTimerConfigPanel.ja-JP.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\SpellTimerConfigPanel.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
@@ -383,6 +430,7 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Overlays\SpellTimerConfigPanel.zh-CN.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
