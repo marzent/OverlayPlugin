@@ -2,8 +2,10 @@ name: Create OverlayPlugin Release
 
 on:
   push:
-    tags:
-    - '*'
+    branches:
+      - main
+    paths:
+      - 'OverlayPlugin/OverlayPlugin.csproj'
 
 jobs:
   validate_tag:
