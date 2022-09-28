@@ -53,39 +53,51 @@
     </Compile>
     <EmbeddedResource Update="CefMissingTab.de-DE.resx">
       <DependentUpon>CefMissingTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="CefMissingTab.fr-FR.resx">
       <DependentUpon>CefMissingTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="CefMissingTab.ja-JP.resx">
       <DependentUpon>CefMissingTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="CefMissingTab.ko-KR.resx">
       <DependentUpon>CefMissingTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="CefMissingTab.resx">
       <DependentUpon>CefMissingTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="CefMissingTab.zh-CN.resx">
       <DependentUpon>CefMissingTab.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="ProgressDisplay.de-DE.resx">
       <DependentUpon>ProgressDisplay.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="ProgressDisplay.fr-FR.resx">
       <DependentUpon>ProgressDisplay.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="ProgressDisplay.ja-JP.resx">
       <DependentUpon>ProgressDisplay.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="ProgressDisplay.ko-KR.resx">
       <DependentUpon>ProgressDisplay.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="ProgressDisplay.resx">
       <DependentUpon>ProgressDisplay.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="ProgressDisplay.zh-CN.resx">
       <DependentUpon>ProgressDisplay.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -93,21 +105,26 @@
     </EmbeddedResource>
     <EmbeddedResource Update="UpdateQuestionForm.de-DE.resx">
       <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="UpdateQuestionForm.fr-FR.resx">
       <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="UpdateQuestionForm.ja-JP.resx">
       <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="UpdateQuestionForm.ko-KR.resx">
       <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
     <EmbeddedResource Update="UpdateQuestionForm.resx">
       <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="UpdateQuestionForm.zh-CN.resx">
       <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
+      <ManifestResourceName>$(RootNamespace).%(FileName)</ManifestResourceName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
