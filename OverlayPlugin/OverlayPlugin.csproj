@@ -7,7 +7,7 @@
     <AssemblyTitle>OverlayPlugin</AssemblyTitle>
     <Product>OverlayPlugin</Product>
     <Description>Overlay plugin for Advanced Combat Tracker</Description>
-    <Copyright>Copyright © RainbowMage 2015, Kuriyama hibiya 2016, ngld 2019</Copyright>
+    <Copyright>Copyright © RainbowMage 2015, Kuriyama hibiya 2016, ngld 2019 </Copyright>
     <Version>0.19.7.0</Version>
     <PublishDir>..\out\$(Configuration)\OverlayPlugin\</PublishDir>
   </PropertyGroup>
