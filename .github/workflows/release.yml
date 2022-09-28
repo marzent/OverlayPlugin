@@ -3,7 +3,7 @@ name: Create OverlayPlugin Release
 on:
   push:
     tags:
-    - '*'
+      - '*'
 
 jobs:
   validate_tag:
