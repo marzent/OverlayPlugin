@@ -63,22 +63,15 @@ try {
 
     Write-Output "==> Building..."
 
+    if (Test-Path out\Release\OverlayPlugin) { Remove-Item out\Release\OverlayPlugin}
     dotnet publish -c release
     
     if (-not $?) { exit 1 }
 
     Write-Output "==> Building archive..."
 
-    Set-Location out\Release\net48
-
-    if (Test-Path ..\OverlayPlugin) { Remove-Item ..\OverlayPlugin -Recurse}
-    New-Item -Path ".." -Name "OverlayPlugin" -ItemType "directory"
-
-    Copy-Item -Path "publish\*" -Destination "..\OverlayPlugin\" -Recurse
-
-    Set-Location ..\OverlayPlugin
+    Set-Location out\Release\OverlayPlugin
     Remove-Item CefSharp -Recurse
-    Remove-Item *.pdb
     Remove-Item *.dll.config
     
     [xml]$csprojcontents = Get-Content -Path "$PWD\..\..\..\OverlayPlugin\OverlayPlugin.csproj";

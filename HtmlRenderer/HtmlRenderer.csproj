@@ -13,7 +13,11 @@
     <CefSharpTargetDir>CefSharp</CefSharpTargetDir>
     <CefSharpBuildAction>None</CefSharpBuildAction>
   </PropertyGroup>
-    <ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
